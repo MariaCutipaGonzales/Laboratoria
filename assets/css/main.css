@@ -1,0 +1,270 @@
+*{
+	font-family: 'Raleway', sans-serif;
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+nav{
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: #fff;
+  height: 80px;
+  z-index: 1000;
+  margin-top: 0;
+  position: fixed;
+  padding-top: 0px;
+  background: none;
+	background-color: #424242;
+  transition: all 0.6s cubic-bezier(0.7, 0.01, 0.3, 1);
+}
+/*Javascript style toggle for menu appear and desappear*/
+.header-in{
+  background-color: rgba(247, 182, 23, 0.81);
+}
+/**/
+/*Navgation general styles*/
+/*Background Menu*/
+nav .nav-background {
+  top: 0px;
+  opacity:0;
+  width: 100%;
+  height: 100%;
+  z-index: 1500;
+  display: table;
+  background: none;
+  position: absolute;
+  transition: background-color 0.6s cubic-bezier(0.7, 0.01, 0.3, 1);
+}
+nav.open .nav-background {
+  opacity: 1;
+  background-color: rgba(247, 182, 23, 0.81) !important;
+  transition: background-color 0.6s cubic-bezier(0.7, 0.01, 0.3, 1);
+}
+nav.open {
+  height: 100%;
+  transition: none;
+  -o-transition: none;
+  -moz-transition: none;
+  -webkit-transition: none;
+}
+/*Navigation list*/
+nav ul {
+  top: -10%;
+  padding: 0;
+  opacity: 0;
+  width: 100%;
+  text-align: center;
+  visibility: hidden;
+  display: table-cell;
+  vertical-align: middle;
+  transform: perspective(600px) rotateX(10deg);
+  transition: all 0.5s cubic-bezier(0.7, 0, 0.36, 0.63);
+}
+nav ul li{
+  visibility: hidden;
+}
+nav ul li a{
+  color:white;
+  width: 100%;
+  display: block;
+  padding: 8px 0 0;
+  letter-spacing: -0.06em;
+}
+nav ul li a:hover{
+  color:#f7b617;
+  background-color: white;
+}
+nav.open ul {
+  top: 0;
+  opacity: 1;
+  margin-top: 0;
+  visibility: visible;
+  transform: perspective(600px) rotateX(0deg);
+}
+nav.open ul li {
+  color:#fff;
+  font-size: 60px;
+  visibility: visible !important;
+}
+/*Menu bar logo and menu styles general*/
+/*Logo*/
+#logo,
+.menu{
+  position: absolute;
+  z-index: 2000;
+}
+#logo{
+  left:15px;
+  top:-4px;
+  width: 70px;
+  height: 74px;
+  padding: 0.4% 3%;
+  text-align: left;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-image: url(../images/logo-white.svg);
+}
+.open #logo,
+nav.solid #logo #logo {
+  background-image: url(../images/logo.svg);
+}
+#logo img{
+  z-index: 2000;
+}
+/*Hamburger*/
+.menu{
+  top:0;
+  right:0;
+  height: 4px;
+  width: 24px;
+  text-align:right;
+  margin: 2rem 2rem;
+  background: #f7b617;
+  transition: all 0.3s;
+}
+.menu:before{
+  top: -8px;
+}
+.menu:after{
+  top: 8px;
+}
+#toggle:hover:before {
+  top: -9px;
+}
+#toggle:hover:after {
+  top: 9px;
+}
+.menu:before,
+.menu:after{
+  content: '';
+  width: 24px;
+  height: 4px;
+  z-index: -1;
+  display: block;
+  position: absolute;
+  background: #f7b617;
+  transition: all 0.3s;
+}
+#toggle:hover {
+  transition: top 0.4s;
+}
+/*Javascript style toggle for menu appear and desappear style background*/
+.solid #toggle .menu {
+  background: #fff;
+}
+.solid #toggle .menu:after{
+  background-color: #fff;
+}
+.solid #toggle .menu:before{
+  background-color: #fff;
+}
+/*Javascript style toggle for menu hamburger appear and desappear*/
+.open .menu {
+  background: none !important;
+}
+.open .menu:after {
+  top: 0 !important;
+  background: #fff !important;
+  transform: rotate(45deg);
+}
+.open .menu:before {
+  top: 0 !important;
+  background: #fff !important;
+  transform: rotate(-45deg);
+}
+
+#contentCoders h3{
+		margin: 20px 20px;
+		font-size: 35px;
+		text-align: center;
+}
+
+/*TYPE WRITER EFECT*/
+#typewriter{
+	top: 0;
+	left: 0;
+	margin-top: 80px;
+	margin-left: 0;
+	margin-right: 0;
+	width: 100%;
+	height: 500px;
+	background-color: black;
+}
+
+#typewriter h1{
+	position: relative;
+	float: left;
+	background: black;
+	color: white;
+}
+
+#contentWriter{
+	padding-top: 225px;
+	margin: auto;
+	text-align: center;
+	display: table;
+}
+
+h1 span{
+	position: absolute;
+	right: 0;
+	width: 0;
+	margin: auto;
+	height: 40px;
+	background: black;
+	text-align: center;
+	border-left: 2px solid #f7b617;
+	animation: writer 5s steps(50)infinite alternate;
+}
+
+@keyframes writer{
+	from{width: 100%}
+	to{width: 0}
+}
+/*Coders Images*/
+.div-image{
+	display: inline-block;
+  overflow: hidden;
+	position: relative;
+  width: 400px;
+	height: 400px;
+	margin-top: -4px;
+}
+
+.div-image img{
+	width: 400px;
+	height: 400px;
+  transition: all 0.3s;
+}
+
+.div-image img:hover{
+	opacity: 0.50;
+  transform: scale(1.1);
+}
+
+.div-image:hover {
+	opacity: 1;
+	background-color:rgba(247, 182, 23, 0.81) !important;
+	cursor: pointer;
+}
+
+.div-image span{
+	z-index: 1;
+	display: none;
+	font-size: 35px;
+	color: white;
+  text-align: center;
+  margin: auto;
+  position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 50px;
+}
+
+.div-image:hover span, .div-image:focus span{
+	display: block;
+}
